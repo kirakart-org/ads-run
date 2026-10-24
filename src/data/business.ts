@@ -1,20 +1,19 @@
 export const site = {
   name: 'Kirakart Ads',
   domain: 'https://ads.kirakart.com',
-  tagline: 'Creator-style ads. Made for brands that want to stand out.',
+  tagline: 'AI-powered UGC-style video ads, tailored to your products.',
   description:
-    'We turn product stories into creator-led video ads for social media and paid campaigns — from the first hook to the final edit.',
-  // Configurable contact details. Replace before launch.
+    'We create AI-powered UGC-style video ads tailored to your products, helping growing brands turn product stories into engaging social media creatives.',
   contact: {
-    email: 'hello@kirakart.com',
-    whatsapp: '919999999999',
-    whatsappDisplay: '+91 99999 99999',
-    instagram: 'https://instagram.com/kirakart',
+    email: 'kirakartsupport@gmail.com',
+    whatsapp: '+919894690119',
+    whatsappDisplay: '+91 9894690119',
+    instagram: 'https://www.instagram.com/kirakart__/',
   },
   social: [
-    { label: 'Instagram', href: 'https://instagram.com/kirakart' },
+    { label: 'Instagram', href: 'https://www.instagram.com/kirakart__/' },
     { label: 'LinkedIn', href: 'https://linkedin.com/company/kirakart' },
-    { label: 'Email', href: 'mailto:hello@kirakart.com' },
+    { label: 'Email', href: 'mailto:kirakartsupport@gmail.com' },
   ],
 } as const;
 

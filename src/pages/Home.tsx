@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Film, Clapperboard, Scissors, Calendar } from 'lucide-react';
+import { ArrowRight, Sparkles, Film, Clapperboard } from 'lucide-react';
 import Seo from '@/components/Seo';
 import Button from '@/components/Button';
 import { Section, SectionHeading } from '@/components/SectionHeading';
@@ -8,7 +8,6 @@ import ServiceCard from '@/components/ServiceCard';
 import PricingCard from '@/components/PricingCard';
 import FAQAccordion from '@/components/FAQAccordion';
 import CtaBanner from '@/components/CtaBanner';
-import { featuredProjects } from '@/data/portfolio';
 import { services } from '@/data/services';
 import { packages, pricingFootnote } from '@/data/pricing';
 import { faqs } from '@/data/faq';
@@ -48,28 +47,28 @@ const creativeConcepts = [
     icon: Film,
     label: 'The Story',
     title: 'Show the product in context',
-    text: 'Place the product in a real routine so the viewer can see themselves using it.',
+    text: 'Build a UGC-inspired product story around relatable routines and product details.',
   },
   {
     icon: Clapperboard,
     label: 'The Creative',
     title: 'Deliver usable ad assets',
-    text: 'Platform-ready files you can run on paid — captions, aspect ratios and all.',
+    text: 'Create polished, short-form ad assets tailored for social channels and e-commerce.',
   },
 ];
 
 const processSteps = [
-  { number: '01', title: 'Share your product and goals', text: 'Tell us what you are selling and what the campaign needs to achieve.' },
-  { number: '02', title: 'Develop concepts and scripts', text: 'We write creative concepts and script beats for your approval.' },
-  { number: '03', title: 'Coordinate creators and production', text: 'We brief creators, shoot and edit to the agreed scope.' },
-  { number: '04', title: 'Review and receive final assets', text: 'You review, request agreed revisions, and receive the final files.' },
+  { number: '01', title: 'Discover Your Product', text: 'We identify interesting brands and products.' },
+  { number: '02', title: 'Create Your Ad Concept', text: 'We produce a customised AI-powered UGC-style ad sample.' },
+  { number: '03', title: 'Share the Idea', text: 'We send the concept to your brand team.' },
+  { number: '04', title: 'Produce Paid Ads', text: 'Once approved, we agree on scope, payment and delivery for additional ad creatives.' },
 ];
 
 const principles = [
   'Product-first thinking',
   'Clear deliverables',
-  'Creator coordination',
-  'Social-first video formats',
+  'AI-powered creative concepts',
+  'Product-first video formats',
   'A straightforward approval process',
   'Flexible packages',
 ];
@@ -96,21 +95,21 @@ export default function HomePage() {
           <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-6">
               <p className="eyebrow mb-5 animate-[fade-up_0.5s_ease-out]">
-                UGC Video Ads / Creative Production
+                AI UGC Ads / Video Ad Creation
               </p>
               <h1 className="font-grotesk text-4xl font-bold leading-[1.05] tracking-tightest text-kirakart-ink animate-[fade-up_0.6s_ease-out] sm:text-5xl md:text-6xl lg:text-[4rem]">
-                Your product. Their next favourite ad.
+                Your Product. Our AI. Your Next Ad.
               </h1>
               <p className="mt-6 max-w-md text-base leading-relaxed text-kirakart-muted animate-[fade-up_0.7s_ease-out] sm:text-lg">
-                We turn product stories into creator-led video ads for social media and paid
-                campaigns — from the first hook to the final edit.
+                We create AI-powered UGC-style video ads tailored to your products, helping growing
+                brands turn product stories into engaging social media creatives.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center animate-[fade-up_0.8s_ease-out]">
-                <Button to="/work" variant="primary">Explore Our Work</Button>
-                <Button to="/contact" variant="secondary">Start a Project</Button>
+                <Button to="/work" variant="primary">See Our Ad Samples</Button>
+                <Button to="/contact" variant="secondary">Get an Ad for Your Brand</Button>
               </div>
               <p className="mt-6 font-grotesk text-xs font-medium uppercase tracking-editorial text-kirakart-muted animate-[fade-up_0.9s_ease-out]">
-                Concept · Creators · Production · Editing
+                Product · AI Concept · Video Ad · Creative
               </p>
             </div>
 
@@ -138,19 +137,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Selected Work */}
+      {/* AI Ad Samples */}
       <Section className="!pt-24 md:!pt-32">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
-            eyebrow="Selected Work"
-            title="Good products deserve better stories."
+            eyebrow="AI Ad Samples"
+            title="Product-specific concepts, made to show what’s possible."
+            description="Explore product-specific ad concepts created with AI to show brands what's possible."
             className="!max-w-xl"
           />
           <Link
             to="/work"
             className="inline-flex items-center gap-1 font-grotesk text-sm font-medium text-kirakart-ink transition-colors hover:text-kirakart-red link-underline"
           >
-            Explore All Work
+            Explore All Ad Samples
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -163,8 +163,8 @@ export default function HomePage() {
       <Section className="bg-kirakart-white">
         <SectionHeading
           eyebrow="The Creative Opportunity"
-          title="Your audience has seen enough of the same old ads."
-          description="Strong creative combines a compelling opening, a clear product story and engaging visual presentation. Here is how we think about each."
+          title="Show your product in a fresh way."
+          description="AI-powered video ad creation brings together a product-first concept, engaging visuals and a clear story for social media."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {creativeConcepts.map((c) => (
@@ -197,7 +197,7 @@ export default function HomePage() {
       <Section className="bg-kirakart-white">
         <SectionHeading
           eyebrow="Process"
-          title="From product to production-ready creative."
+          title="From product discovery to paid ad production."
         />
         <div className="mt-14 grid gap-0 border-t border-kirakart-border md:grid-cols-4">
           {processSteps.map((step, i) => (
@@ -223,8 +223,8 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <SectionHeading
               eyebrow="Why Kirakart Ads"
-              title="A creative partner, not another complicated process."
-              description="We focus on the creative and keep the workflow simple — so you spend time on your brand, not on managing production."
+              title="AI-powered ad concepts, built around your product."
+              description="We identify interesting products, create tailored UGC-style ad concepts with AI, and share the idea directly with your brand team."
             />
             <Button to="/about" variant="ghost" className="mt-8">Read our approach</Button>
           </div>
@@ -243,7 +243,7 @@ export default function HomePage() {
 
       {/* Industries */}
       <Section className="bg-kirakart-white">
-        <SectionHeading eyebrow="Industries" title="Categories we know how to shoot." />
+        <SectionHeading eyebrow="Product Categories" title="Product stories across categories." />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {industries.map((ind) => (
             <div key={ind.title} className="group">
@@ -267,8 +267,8 @@ export default function HomePage() {
       <Section>
         <SectionHeading
           eyebrow="Pricing"
-          title="Packages that scale with your creative needs."
-          description="Start small and scale up. Every package is scoped before production so there are no surprises."
+          title="Proposed packages for AI video ad creation."
+          description="Indicative starting packages for product ad videos. Final scope, licensing and commercial usage rights are agreed before production."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {packages.map((p) => (
@@ -292,8 +292,9 @@ export default function HomePage() {
       </Section>
 
       <CtaBanner
-        title="Let's make your next product ad worth watching."
-        description="Tell us what you're selling. We'll help you find a creative direction worth exploring."
+        title="Get an AI-powered ad for your brand."
+        description="Tell us about your product and we’ll discuss a tailored ad concept and production scope."
+        primaryLabel="Get an Ad for Your Brand"
       />
 
       <div className="pb-20" />

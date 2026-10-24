@@ -29,13 +29,15 @@ export default function VideoCard({ project, onOpen, priority = false }: VideoCa
           <img
             ref={imgRef}
             src={project.thumbnail}
-            alt={project.title}
+            alt={`${project.title} — ${project.category} concept video thumbnail`}
             loading={priority ? 'eager' : 'lazy'}
             decoding="async"
+            width={600}
+            height={750}
             onLoad={() => setLoaded(true)}
             onError={() => setFailed(true)}
-            className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ${
-              loaded ? 'opacity-100 scale-100 group-hover:scale-[1.04]' : 'opacity-0 scale-105'
+            className={`absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-300 ease-out ${
+              loaded ? 'opacity-100 scale-100 group-hover:scale-[1.02]' : 'opacity-0 scale-[1.01]'
             }`}
           />
         ) : (
@@ -46,7 +48,7 @@ export default function VideoCard({ project, onOpen, priority = false }: VideoCa
         )}
 
         {!loaded && !failed && (
-          <div className="absolute inset-0 animate-pulse bg-kirakart-border/30" />
+          <div className="absolute inset-0 bg-kirakart-border/30" />
         )}
 
         <div className="absolute inset-0 bg-gradient-to-t from-kirakart-ink/40 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
@@ -57,13 +59,13 @@ export default function VideoCard({ project, onOpen, priority = false }: VideoCa
           </span>
           {project.isConcept && (
             <span className="rounded-full bg-kirakart-yellow/90 px-3 py-1 font-grotesk text-[10px] font-medium uppercase tracking-wide text-kirakart-ink backdrop-blur-sm">
-              Concept
+              AI-Generated Concept
             </span>
           )}
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-kirakart-cream/95 text-kirakart-ink shadow-lg transition-all duration-300 ease-out group-hover:scale-110 group-hover:bg-kirakart-red group-hover:text-white">
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-kirakart-cream/95 text-kirakart-ink shadow-lg transition-[transform,background-color,color] duration-200 ease-out group-hover:scale-105 group-hover:bg-kirakart-red group-hover:text-white">
             <Play className="h-5 w-5 translate-x-0.5 fill-current" />
           </span>
         </div>

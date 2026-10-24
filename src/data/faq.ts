@@ -5,53 +5,53 @@ export interface FaqItem {
 
 export const faqs: FaqItem[] = [
   {
-    question: 'What is a UGC video ad?',
+    question: 'What is an AI UGC-style video ad?',
     answer:
-      'A UGC-style video ad is a short-form video made to read like organic, creator-led content — shot in a natural style, often creator-presented — but structured as an ad you can run on paid social.',
+      'It is a product-focused short-form ad made with AI-powered visuals and a UGC-inspired creative style. The final approach can combine AI-generated visuals, voiceovers, editing, your product assets and human creators when appropriate.',
   },
   {
-    question: 'Do you provide creators?',
+    question: 'How do you create an ad for my product?',
     answer:
-      'Yes. We can source and coordinate creators who fit your category and brief. Creator fees are separate from the package price and are quoted based on the project.',
+      'We identify products, develop a tailored AI-powered UGC-style ad concept and share the sample with your brand. If you approve, we agree on scope, payment, licensing and delivery for additional paid ad creatives.',
   },
   {
-    question: 'Can I send my own products?',
+    question: 'Can I share my product assets?',
     answer:
-      'Absolutely. Sending your own products is usually the fastest route. We will share a shipping address once the scope is agreed.',
+      'Yes. Product images, packaging details, website links and brand guidelines help us tailor the ad concepts to your product.',
   },
   {
     question: 'Can I use videos in paid advertisements?',
     answer:
-      'Yes, within the usage rights defined in your quotation. Usage terms — platforms, duration and territory — are agreed before production so there is no ambiguity later.',
+      'Commercial usage rights are agreed in the final scope before paid production and delivery. Licensing requirements can affect the final quote.',
   },
   {
     question: 'How much does production cost?',
     answer:
-      'Packages start at ₹4,999 for a focused two-video set and scale up to monthly production at ₹29,999/month. The final quote depends on scope, creator fees, usage and any add-ons.',
+      'Proposed starting packages are ₹4,999 for 2 videos, ₹14,999 for 5 videos and ₹29,999 for 8 videos per month. Final pricing depends on scope, licensing, production requirements and commercial usage rights.',
   },
   {
     question: 'How long does production take?',
     answer:
-      'A typical small package takes one to two weeks from agreed brief to final delivery. Monthly production runs on an agreed delivery schedule. Timelines depend on creator availability and revision rounds.',
+      'The delivery timeline is agreed after the scope and production requirements are confirmed. Timing depends on the creative, licensing and agreed revisions.',
   },
   {
     question: 'Can you create multiple hooks?',
     answer:
-      'Yes. Hook variations are included in the Growth and Monthly packages and are available as an add-on on the Starter package.',
+      'Yes. AI-generated hooks and creative variations can be scoped as part of a package or quoted as an additional creative.',
   },
   {
     question: 'Can I start with one small package?',
     answer:
-      'Yes. Many brands start with the Starter package to test the creative direction before scaling into Growth or Monthly production.',
+      'Yes. The proposed Starter package includes 2 videos. We confirm the final scope and usage terms before production begins.',
   },
   {
     question: 'Do you guarantee advertising results?',
     answer:
-      'No. We produce creative — we do not guarantee sales, ROAS, virality or advertising performance. Media performance depends on your audience, targeting, budget and platform.',
+      'No. We create video ad concepts and paid creatives, but do not guarantee sales, ROAS, virality or advertising performance.',
   },
   {
     question: 'How do I start?',
     answer:
-      'Send us a brief through the contact page. Tell us what you are selling, the package you are considering and your campaign objective, and we will come back with a scoped quote.',
+      'Tell us about your brand and product using the contact form or WhatsApp. We will discuss the proposed scope, licensing and production requirements with you.',
   },
 ];

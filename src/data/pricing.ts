@@ -14,13 +14,13 @@ export const packages: PricingPackage[] = [
     id: 'starter',
     name: 'Starter',
     price: '₹4,999',
-    blurb: 'A focused first package to test the creative direction.',
+    blurb: 'A proposed starting package for a first product ad concept.',
     features: [
       '2 short-form videos',
-      'Basic concept and scripting',
+      'AI-powered ad concepts',
       'Editing and captions',
       'One agreed revision per video',
-      'Usage rights defined in the quotation',
+      'Licensing and usage rights agreed before production',
     ],
     cta: 'Choose Starter',
   },
@@ -28,13 +28,13 @@ export const packages: PricingPackage[] = [
     id: 'growth',
     name: 'Growth',
     price: '₹14,999',
-    blurb: 'More volume and creative variation for brands running paid.',
+    blurb: 'A proposed package for more product video ad variations.',
     features: [
       '5 short-form videos',
-      'Creative concepts and scripts',
+      'AI-powered concepts and creative variations',
       'Editing and captions',
       'Selected hook variations',
-      'Agreed revisions and usage terms',
+      'Scope, licensing and usage rights agreed before production',
     ],
     cta: 'Choose Growth',
     highlight: true,
@@ -44,24 +44,24 @@ export const packages: PricingPackage[] = [
     name: 'Monthly Creative',
     price: '₹29,999',
     cadence: '/month',
-    blurb: 'A retained creative pipeline for brands refreshing paid often.',
+    blurb: 'A proposed monthly package for an ongoing flow of product ads.',
     features: [
       '8 short-form videos per month',
-      'Monthly creative planning',
+      'Monthly AI-powered ad concepts',
       'Selected creative variations',
       'Monthly delivery schedule',
-      'Agreed revisions and usage terms',
+      'Scope, licensing and usage rights agreed before production',
     ],
     cta: 'Discuss Monthly',
   },
 ];
 
 export const packageAddOns = [
-  { title: 'Extra hook variation', detail: 'Additional opening hooks cut from the same footage.' },
-  { title: 'Additional revision round', detail: 'Beyond the agreed revisions in your package.' },
-  { title: 'Extended usage rights', detail: 'Broader or longer-term commercial usage than the standard quote.' },
-  { title: 'Reshoot', detail: 'Extensive reshoots beyond the agreed production scope.' },
+  { title: 'Additional creative variation', detail: 'Another hook, story angle or edit for the same product.' },
+  { title: 'Additional revision round', detail: 'Further edits beyond the agreed package scope.' },
+  { title: 'Extended commercial usage', detail: 'Broader or longer-term usage rights, defined in the final quote.' },
+  { title: 'Additional production requirements', detail: 'Special assets, licensing or production needs outside the agreed scope.' },
 ];
 
 export const pricingFootnote =
-  'These are proposed introductory prices, subject to final scope. Creator fees, shipping, extensive reshoots, special licensing and additional usage rights may affect the quotation.';
+  'These are proposed starting packages, subject to final scope, licensing, production requirements and commercial usage rights. Final pricing is confirmed before paid production begins.';

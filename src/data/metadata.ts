@@ -10,45 +10,45 @@ export interface PageMeta {
 export const pageMeta: Record<Route, PageMeta> = {
   '/': {
     path: '/',
-    title: 'Kirakart Ads | UGC Video Ads for Growing Brands',
+    title: 'Kirakart Ads | AI UGC Video Ads for Brands',
     description:
-      'Create UGC-style video ads, product demonstrations, and short-form social creatives for growing brands. Explore Kirakart Ads services and packages.',
-    h1: 'Your product. Their next favourite ad.',
+      'AI-powered UGC video ad creation for brands. Explore product-specific AI ad concepts and video ads for e-commerce, social media and growing brands.',
+    h1: 'Your Product. Our AI. Your Next Ad.',
   },
   '/work': {
     path: '/work',
-    title: 'Work | Kirakart Ads',
+    title: 'AI Ad Samples | Kirakart Ads',
     description:
-      'A portfolio of creator-style UGC video ads, product demonstrations and short-form social creatives made for growing brands.',
-    h1: 'Creative work, made to move products.',
+      'Explore AI-generated UGC-style ad concepts for skincare, beauty, food, fashion and lifestyle products.',
+    h1: 'AI Ad Samples',
   },
   '/services': {
     path: '/services',
     title: 'Services | Kirakart Ads',
     description:
-      'UGC video ad production, creator-led product videos, product demonstrations, unboxing videos, short-form social ads, hook variations and monthly creative production.',
-    h1: 'Services built around your product story.',
+      'AI UGC ads, AI product advertisement videos, AI-generated hooks and custom packages for product video ads across social media and e-commerce.',
+    h1: 'AI-powered video ad creation for your products.',
   },
   '/pricing': {
     path: '/pricing',
     title: 'Pricing | Kirakart Ads',
     description:
-      'Transparent packages for UGC video ad production — Starter, Growth and Monthly Creative — with deliverables, revisions and usage rights explained.',
-    h1: 'Pricing that scales with your creative needs.',
+      'Proposed starting packages for AI UGC video ads and product advertisement videos, with scope, licensing and commercial usage rights agreed before production.',
+    h1: 'Proposed packages for AI video ad creation.',
   },
   '/about': {
     path: '/about',
     title: 'About | Kirakart Ads',
     description:
-      'Kirakart Ads helps product brands create stronger social-first advertising through thoughtful concepts, suitable creators and an organised production process.',
-    h1: 'Creative thinking. Clear execution.',
+      'Learn how Kirakart Ads uses AI-powered UGC-style concepts to help product brands explore engaging video advertisements for social media.',
+    h1: 'AI-powered ad concepts, built around your product.',
   },
   '/contact': {
     path: '/contact',
     title: 'Contact | Kirakart Ads',
     description:
-      'Tell us what you are building. Send a brief and we will come back with a scoped quote for your UGC video ad production.',
-    h1: 'Tell us what you\u2019re building.',
+      'Tell us about your product and request AI UGC video ads, AI product advertisement videos or a custom product ad package.',
+    h1: 'Get an AI-powered ad for your brand.',
   },
   '/404': {
     path: '/404',

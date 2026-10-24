@@ -12,8 +12,8 @@ export default function ServicesPage() {
       <Section className="!pt-12 md:!pt-16">
         <SectionHeading
           eyebrow="Services"
-          title="Services built around your product story."
-          description="We produce video — we do not manage paid media, run influencer posting campaigns, or guarantee advertising performance. Everything below is creative production, scoped and quoted before we start."
+          title="AI-powered video ad creation for your products."
+          description="Choose AI UGC-style video ads, product advertisement videos, creative variations or a custom package. Production may combine AI-generated visuals, voiceovers, editing, your product assets and human creators when appropriate."
         />
       </Section>
 
@@ -63,7 +63,7 @@ export default function ServicesPage() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button to="/contact" variant="outline" className="!py-2.5 !px-5 text-xs">
-                    Enquire about {s.title}
+                    Start Your Project
                   </Button>
                   <Button to="/work" variant="ghost" className="!py-2.5 text-xs">
                     See related work
@@ -75,23 +75,10 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section className="!pt-0">
-        <div className="rounded-2xl border border-kirakart-border bg-kirakart-white p-8 sm:p-12">
-          <h2 className="font-grotesk text-2xl font-bold tracking-tight text-kirakart-ink">
-            What we don&rsquo;t do
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-kirakart-muted sm:text-base">
-            We produce video creative only. We are not a media buying agency, an influencer
-            marketplace, a SaaS dashboard, or an AI generation tool. We do not guarantee sales,
-            ROAS, virality or advertising performance — those depend on your audience, targeting and
-            budget. Anything outside the agreed scope is quoted separately.
-          </p>
-        </div>
-      </Section>
-
       <CtaBanner
-        title="Tell us what you're building."
-        description="Pick a service above or send a general brief — we will scope it and come back with a quote."
+        title="Get an AI-powered ad for your brand."
+        description="Share your product and we’ll discuss the right creative scope, licensing and delivery."
+        primaryLabel="Get an Ad for Your Brand"
       />
       <div className="pb-20" />
     </>

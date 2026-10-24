@@ -23,24 +23,23 @@ export interface PortfolioProject {
   published: boolean;
 }
 
-// Open-access sample clips used to demonstrate playback. Replace with real
-// hosted video URLs before launch. Thumbnails are licensed Pexels photography.
+// Open-access illustrative video previews. Samples are concepts, not client campaigns.
 export const portfolio: PortfolioProject[] = [
   {
     id: 'glow-serum-demo',
-    title: 'Glow Serum Demonstration',
+    title: 'AI Skincare Serum Routine',
     category: 'Beauty',
     format: '9:16 · 30s',
     description:
-      'A close, creator-led demonstration of a lightweight facial serum, focusing on texture, absorption and the morning ritual.',
+      'AI-generated UGC-style ad concept for an imagined skincare serum, focusing on texture, application and a simple morning routine.',
     objective:
-      'Show the product texture in natural light and let the application do the storytelling — no hard sell, just a believable routine.',
+      'Introduce a serum through a familiar routine and clear product details, with a natural-feeling UGC-style story.',
     thumbnail:
-      'https://images.pexels.com/photos/8101523/pexels-photo-8101523.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/7320788/pexels-photo-7320788.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/8101523/pexels-photo-8101523.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/7320788/pexels-photo-7320788.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+      'https://videos.pexels.com/video-files/7597242/7597242-uhd_1440_2560_24fps.mp4',
     isConcept: true,
     featured: true,
     published: true,
@@ -51,15 +50,15 @@ export const portfolio: PortfolioProject[] = [
     category: 'Beauty',
     format: '9:16 · 45s',
     description:
-      'A quick three-step routine cut for Reels and TikTok, with soft transitions and captioned product cues.',
+      'AI-generated beauty ad concept showing a simple three-step routine with clear product cues and short-form pacing.',
     objective:
-      'Make a familiar morning routine feel achievable in 45 seconds, with the product as the quiet hero of the sequence.',
+      'Make a beauty product part of an easy-to-follow routine, keeping the product central to the concept.',
     thumbnail:
-      'https://images.pexels.com/photos/7512743/pexels-photo-7512743.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/17891765/pexels-photo-17891765.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/7512743/pexels-photo-7512743.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/17891765/pexels-photo-17891765.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+      'https://videos.pexels.com/video-files/5308682/5308682-hd_1920_1080_24fps.mp4',
     isConcept: true,
     featured: true,
     published: true,
@@ -70,15 +69,15 @@ export const portfolio: PortfolioProject[] = [
     category: 'Food',
     format: '9:16 · 20s',
     description:
-      'A snappy unboxing-to-bite sequence for a packaged snack, paced for a six-second hold and a swipe.',
+      'AI-generated food ad concept following a snack from package reveal to first bite in a quick, social-first sequence.',
     objective:
-      'Capture the crunch, the colours and the pack appeal inside the first two seconds to earn a second look.',
+      'Lead with the package reveal and appetising product details to establish an immediate visual hook.',
     thumbnail:
-      'https://images.pexels.com/photos/9513108/pexels-photo-9513108.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6920009/pexels-photo-6920009.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/9513108/pexels-photo-9513108.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6920009/pexels-photo-6920009.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      'https://videos.pexels.com/video-files/6547782/6547782-uhd_1440_2560_24fps.mp4',
     isConcept: true,
     featured: true,
     published: true,
@@ -89,15 +88,15 @@ export const portfolio: PortfolioProject[] = [
     category: 'Fashion',
     format: '9:16 · 35s',
     description:
-      'A creator styles a single bag across three outfits, cutting quickly between looks to show versatility.',
+      'AI-generated fashion ad concept presenting one accessory across multiple outfit ideas.',
     objective:
-      'Demonstrate how one accessory works across occasions without a voiceover — let the styling rhythm carry it.',
+      'Show the accessory in different looks and let the visual styling tell the product story.',
     thumbnail:
-      'https://images.pexels.com/photos/30466066/pexels-photo-30466066.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6347607/pexels-photo-6347607.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/30466066/pexels-photo-30466066.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6347607/pexels-photo-6347607.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+      'https://videos.pexels.com/video-files/13929683/13929683-uhd_1440_2560_24fps.mp4',
     isConcept: true,
     featured: true,
     published: true,
@@ -108,34 +107,34 @@ export const portfolio: PortfolioProject[] = [
     category: 'Unboxing',
     format: '9:16 · 40s',
     description:
-      'A hands-first unboxing that slows down on the reveal moment, built for curiosity and a clean product hero shot.',
+      'AI-generated unboxing-style ad concept that builds anticipation around a product reveal and finishes on a clear hero frame.',
     objective:
-      'Lead with the hands and the box, delay the reveal, and land on a single crisp product frame the brand can reuse.',
+      'Build curiosity with a paced reveal, then finish on a clean product-focused frame.',
     thumbnail:
-      'https://images.pexels.com/photos/6958447/pexels-photo-6958447.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6958455/pexels-photo-6958455.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/6958447/pexels-photo-6958447.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6958455/pexels-photo-6958455.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+      'https://videos.pexels.com/video-files/7191314/7191314-uhd_2560_1080_25fps.mp4',
     isConcept: true,
     featured: true,
     published: true,
   },
   {
     id: 'problem-solution-ad',
-    title: 'Problem & Solution Spot',
+    title: 'UGC-Style Problem-Solution Ad',
     category: 'Creator-led Ads',
     format: '9:16 · 25s',
     description:
-      'A creator names a relatable skincare frustration, introduces the product, and shows the difference in one routine.',
+      'AI-generated UGC-style concept that frames a common skincare need, introduces an imagined product and shows how it fits a routine.',
     objective:
-      'Structure the spot as problem, introduction and result so the product earns its place in the story rather than interrupting it.',
+      'Use a clear problem, product introduction and routine to make the product story easy to follow.',
     thumbnail:
-      'https://images.pexels.com/photos/6475980/pexels-photo-6475980.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/4152967/pexels-photo-4152967.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/6475980/pexels-photo-6475980.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/4152967/pexels-photo-4152967.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+      'https://videos.pexels.com/video-files/7314356/7314356-uhd_2732_1440_25fps.mp4',
     isConcept: true,
     featured: true,
     published: true,
@@ -146,15 +145,15 @@ export const portfolio: PortfolioProject[] = [
     category: 'Beauty',
     format: '9:16 · 18s',
     description:
-      'A macro study of a dropper serum — the drop, the spread, the glow — cut tight for an opening hook.',
+      'AI-generated skincare concept centred on a serum dropper, texture and application for a close-up opening hook.',
     objective:
-      'Lead with a single satisfying macro moment to earn attention before any product claim appears on screen.',
+      'Lead with a tactile product detail, then introduce the product without making unsupported performance claims.',
     thumbnail:
-      'https://images.pexels.com/photos/8101534/pexels-photo-8101534.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6724512/pexels-photo-6724512.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/8101534/pexels-photo-8101534.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6724512/pexels-photo-6724512.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+      'https://videos.pexels.com/video-files/7314356/7314356-uhd_2732_1440_25fps.mp4',
     isConcept: true,
     featured: false,
     published: true,
@@ -165,15 +164,15 @@ export const portfolio: PortfolioProject[] = [
     category: 'Food',
     format: '9:16 · 22s',
     description:
-      'A pour-and-serve sequence for a bottled drink, built around condensation, sound design and a single hero sip.',
+      'AI-generated food and beverage ad concept built around a drink pour, product details and a serving moment.',
     objective:
-      'Use the pour as the hook and let sound design carry the craving — no voiceover, just appetite appeal.',
+      'Use the pour as the visual hook and keep the product central throughout the short-form edit.',
     thumbnail:
-      'https://images.pexels.com/photos/25402112/pexels-photo-25402112.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/25402112/pexels-photo-25402112.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/25402112/pexels-photo-25402112.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/25402112/pexels-photo-25402112.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      'https://videos.pexels.com/video-files/7593122/7593122-uhd_2732_1318_30fps.mp4',
     isConcept: true,
     featured: false,
     published: true,
@@ -184,15 +183,15 @@ export const portfolio: PortfolioProject[] = [
     category: 'Fashion',
     format: '9:16 · 30s',
     description:
-      'A mirror-frame styling video showing a single accessory completing a look, paced for a double-tap.',
+      'AI-generated fashion ad concept presenting an accessory as the finishing detail in a mirror-style look.',
     objective:
-      'Keep the camera in the mirror so the viewer feels like the creator, with the product as the final piece of the look.',
+      'Use a familiar mirror-style framing and make the accessory the final detail of the outfit.',
     thumbnail:
-      'https://images.pexels.com/photos/34620275/pexels-photo-34620275.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6347607/pexels-photo-6347607.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/34620275/pexels-photo-34620275.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6347607/pexels-photo-6347607.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+      'https://videos.pexels.com/video-files/13929683/13929683-uhd_1440_2560_24fps.mp4',
     isConcept: true,
     featured: false,
     published: true,
@@ -203,15 +202,15 @@ export const portfolio: PortfolioProject[] = [
     category: 'Lifestyle',
     format: '9:16 · 28s',
     description:
-      'A fragrance placed in a lived-in moment — shelves, light, a held bottle — instead of a glossy product table.',
+      'AI-generated lifestyle ad concept placing an imagined fragrance in a warm, everyday setting.',
     objective:
-      'Move the bottle out of the studio and into a believable scene so the scent feels like a daily choice, not a display object.',
+      'Position the product in a relatable daily moment instead of a standalone product display.',
     thumbnail:
-      'https://images.pexels.com/photos/7364096/pexels-photo-7364096.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/8371391/pexels-photo-8371391.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/7364096/pexels-photo-7364096.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/8371391/pexels-photo-8371391.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+      'https://videos.pexels.com/video-files/5308682/5308682-hd_1920_1080_24fps.mp4',
     isConcept: true,
     featured: false,
     published: true,
@@ -222,34 +221,34 @@ export const portfolio: PortfolioProject[] = [
     category: 'Product Demonstration',
     format: '9:16 · 35s',
     description:
-      'A clear, repeatable demonstration of how a product fits into an existing routine, shot in one continuous take.',
+      'AI-generated product demonstration concept showing how an imagined product could fit into a simple routine.',
     objective:
-      'Remove cuts so the viewer trusts the routine is real, and let the product prove itself without a hard claim.',
+      'Keep the use case clear and product-led, without relying on unsupported product claims.',
     thumbnail:
-      'https://images.pexels.com/photos/9774854/pexels-photo-9774854.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6724512/pexels-photo-6724512.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/9774854/pexels-photo-9774854.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/6724512/pexels-photo-6724512.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+      'https://videos.pexels.com/video-files/7597242/7597242-uhd_1440_2560_24fps.mp4',
     isConcept: true,
     featured: false,
     published: true,
   },
   {
     id: 'creator-led-ad-hook',
-    title: 'Creator-Led Hook Spot',
+    title: 'AI UGC-Style Product Hook',
     category: 'Creator-led Ads',
     format: '9:16 · 15s',
     description:
-      'A creator opens with a direct-to-camera hook, then pivots to the product for a tight, paid-ready spot.',
+      'AI-generated UGC-style ad concept opening with a relatable hook before introducing an imagined product.',
     objective:
-      'Use a genuine creator hook to earn the first three seconds, then deliver the product message before attention drops.',
+      'Introduce a simple product message early and keep the opening tailored to the intended audience.',
     thumbnail:
-      'https://images.pexels.com/photos/6593779/pexels-photo-6593779.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/4152967/pexels-photo-4152967.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     poster:
-      'https://images.pexels.com/photos/6593779/pexels-photo-6593779.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/4152967/pexels-photo-4152967.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+      'https://videos.pexels.com/video-files/5308682/5308682-hd_1920_1080_24fps.mp4',
     isConcept: true,
     featured: false,
     published: true,
@@ -262,9 +261,9 @@ export const portfolio: PortfolioProject[] = [
     description: 'An unpublished draft kept to verify the published filter.',
     objective: 'Should never appear on the site.',
     thumbnail:
-      'https://images.pexels.com/photos/8101523/pexels-photo-8101523.jpeg?auto=compress&cs=tinysrgb&h=900&w=600',
+      'https://images.pexels.com/photos/7320788/pexels-photo-7320788.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=750&w=600',
     videoUrl:
-      'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      'https://videos.pexels.com/video-files/7191314/7191314-uhd_2560_1080_25fps.mp4',
     isConcept: true,
     featured: false,
     published: false,

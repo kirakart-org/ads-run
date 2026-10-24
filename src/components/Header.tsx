@@ -4,7 +4,6 @@ import { Menu, X } from 'lucide-react';
 import { navLinks } from '@/data/routes';
 import { site } from '@/data/business';
 import Button from './Button';
-import Seo from './Seo';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,7 +56,7 @@ export default function Header() {
 
           <div className="hidden md:block">
             <Button to="/contact" variant="primary" className="!py-2.5 !px-5 text-xs">
-              Let&rsquo;s Talk
+              Get an Ad for Your Brand
             </Button>
           </div>
 
@@ -87,7 +86,7 @@ export default function Header() {
                 </Link>
               ))}
               <Button to="/contact" variant="primary" className="mt-5 w-full" onClick={() => setOpen(false)}>
-                Let&rsquo;s Talk
+                Get an Ad for Your Brand
               </Button>
             </nav>
           </div>

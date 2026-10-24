@@ -9,7 +9,7 @@ interface SectionHeadingProps {
   as?: 'h1' | 'h2' | 'h3';
 }
 
-export default function SectionHeading({
+export function SectionHeading({
   eyebrow,
   title,
   description,
@@ -34,6 +34,8 @@ export default function SectionHeading({
     </div>
   );
 }
+
+export default SectionHeading;
 
 interface SectionProps {
   children: ReactNode;

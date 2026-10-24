@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle } from 'lucide-react';
 import { packages } from '@/data/pricing';
 import { site } from '@/data/business';
 
@@ -13,9 +13,7 @@ interface FormState {
   packageId: string;
   budget: string;
   videoCount: string;
-  objective: string;
   brief: string;
-  contactMethod: string;
 }
 
 type Errors = Partial<Record<keyof FormState, string>>;
@@ -29,9 +27,7 @@ const initialState: FormState = {
   packageId: '',
   budget: '',
   videoCount: '',
-  objective: '',
   brief: '',
-  contactMethod: 'Email',
 };
 
 const categories = [
@@ -50,28 +46,16 @@ const budgets = [
   'Not sure yet',
 ];
 
-const objectives = [
-  'Brand awareness',
-  'Product launch',
-  'Paid social testing',
-  'Content refresh',
-  'Other',
-];
-
-const contactMethods = ['Email', 'WhatsApp', 'Phone'];
-
 function validate(s: FormState): Errors {
   const e: Errors = {};
-  if (!s.fullName.trim()) e.fullName = 'Please enter your full name.';
+  if (!s.fullName.trim()) e.fullName = 'Please enter your name.';
   if (!s.email.trim()) e.email = 'Please enter your email.';
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email)) e.email = 'Please enter a valid email address.';
   if (!s.brand.trim()) e.brand = 'Please enter your brand name.';
   if (!s.category) e.category = 'Please select a product category.';
   if (!s.budget) e.budget = 'Please select a budget range.';
-  if (!s.objective) e.objective = 'Please select a campaign objective.';
   if (!s.brief.trim() || s.brief.trim().length < 20)
     e.brief = 'Please add a brief of at least 20 characters.';
-  if (!s.contactMethod) e.contactMethod = 'Please choose a preferred contact method.';
   return e;
 }
 
@@ -80,7 +64,7 @@ export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Set<keyof FormState>>(new Set());
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'success'>('idle');
 
   useEffect(() => {
     const pkg = searchParams.get('package');
@@ -111,30 +95,25 @@ export default function ContactForm() {
     setTouched(new Set(Object.keys(form) as (keyof FormState)[]));
     if (Object.keys(allErrors).length > 0) return;
 
-    setStatus('submitting');
     const subject = encodeURIComponent(`New enquiry from ${form.brand} — ${packageLabel || 'General'}`);
     const body = encodeURIComponent(
       [
-        `Full name: ${form.fullName}`,
+        `Name: ${form.fullName}`,
         `Business email: ${form.email}`,
         `Brand: ${form.brand}`,
-        `Website / Instagram: ${form.url || '—'}`,
+        `Product website / Instagram: ${form.url || '—'}`,
         `Product category: ${form.category}`,
         `Selected package: ${packageLabel || '—'}`,
         `Budget: ${form.budget}`,
-        `Number of videos: ${form.videoCount || '—'}`,
-        `Campaign objective: ${form.objective}`,
-        `Preferred contact: ${form.contactMethod}`,
+        `Desired number of videos: ${form.videoCount || '—'}`,
         '',
-        'Brief:',
+        'Project details:',
         form.brief,
       ].join('\n'),
     );
 
-    window.setTimeout(() => {
-      window.location.href = `mailto:${site.contact.email}?subject=${subject}&body=${body}`;
-      setStatus('success');
-    }, 900);
+    window.location.href = `mailto:${site.contact.email}?subject=${subject}&body=${body}`;
+    setStatus('success');
   };
 
   if (status === 'success') {
@@ -142,11 +121,11 @@ export default function ContactForm() {
       <div className="border border-kirakart-border bg-kirakart-cream p-8 text-center sm:p-12">
         <CheckCircle2 className="mx-auto h-12 w-12 text-kirakart-red" />
         <h3 className="mt-4 font-grotesk text-xl font-semibold text-kirakart-ink">
-          Your brief is on its way.
+          Your email draft is ready.
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-kirakart-muted">
-          Your email app should have opened with your details pre-filled. If it didn&rsquo;t, write
-          to us directly at{' '}
+          Your email app should have opened with your enquiry pre-filled. Nothing is submitted or
+          stored on this website. If it didn&rsquo;t, write to us directly at{' '}
           <a href={`mailto:${site.contact.email}`} className="text-kirakart-red link-underline">
             {site.contact.email}
           </a>
@@ -175,7 +154,7 @@ export default function ContactForm() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="fullName" className="mb-1.5 block font-grotesk text-sm font-medium text-kirakart-ink">
-            Full name <span className="text-kirakart-red">*</span>
+            Name <span className="text-kirakart-red">*</span>
           </label>
           <input
             id="fullName"
@@ -227,7 +206,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="url" className="mb-1.5 block font-grotesk text-sm font-medium text-kirakart-ink">
-            Website or Instagram URL
+            Product website or Instagram URL
           </label>
           <input
             id="url"
@@ -278,7 +257,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="budget" className="mb-1.5 block font-grotesk text-sm font-medium text-kirakart-ink">
             Approximate budget <span className="text-kirakart-red">*</span>
@@ -300,7 +279,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="videoCount" className="mb-1.5 block font-grotesk text-sm font-medium text-kirakart-ink">
-            Number of videos
+            Desired number of videos
           </label>
           <input
             id="videoCount"
@@ -312,35 +291,16 @@ export default function ContactForm() {
             className={fieldClass('videoCount')}
           />
         </div>
-        <div>
-          <label htmlFor="objective" className="mb-1.5 block font-grotesk text-sm font-medium text-kirakart-ink">
-            Campaign objective <span className="text-kirakart-red">*</span>
-          </label>
-          <select
-            id="objective"
-            value={form.objective}
-            onChange={(e) => update('objective', e.target.value)}
-            onBlur={() => handleBlur('objective')}
-            className={fieldClass('objective')}
-            aria-invalid={!!errors.objective}
-          >
-            <option value="">Select an objective</option>
-            {objectives.map((o) => (
-              <option key={o} value={o}>{o}</option>
-            ))}
-          </select>
-          {touched.has('objective') && errors.objective && <FieldError msg={errors.objective} />}
-        </div>
       </div>
 
       <div>
         <label htmlFor="brief" className="mb-1.5 block font-grotesk text-sm font-medium text-kirakart-ink">
-          Project brief <span className="text-kirakart-red">*</span>
+          Project details <span className="text-kirakart-red">*</span>
         </label>
         <textarea
           id="brief"
           rows={5}
-          placeholder="Tell us about your product, what you're selling, and what kind of creative you're looking for."
+          placeholder="Tell us about your product, the ad you have in mind, and any assets or requirements we should know about."
           value={form.brief}
           onChange={(e) => update('brief', e.target.value)}
           onBlur={() => handleBlur('brief')}
@@ -350,54 +310,17 @@ export default function ContactForm() {
         {touched.has('brief') && errors.brief && <FieldError msg={errors.brief} />}
       </div>
 
-      <div>
-        <span className="mb-2 block font-grotesk text-sm font-medium text-kirakart-ink">
-          Preferred contact method <span className="text-kirakart-red">*</span>
-        </span>
-        <div className="flex flex-wrap gap-3">
-          {contactMethods.map((m) => (
-            <label
-              key={m}
-              className={`flex cursor-pointer items-center gap-2 border px-4 py-2.5 text-sm transition-colors ${
-                form.contactMethod === m
-                  ? 'border-kirakart-ink bg-kirakart-ink text-kirakart-cream'
-                  : 'border-kirakart-border text-kirakart-ink/80 hover:border-kirakart-ink/40'
-              }`}
-            >
-              <input
-                type="radio"
-                name="contactMethod"
-                value={m}
-                checked={form.contactMethod === m}
-                onChange={(e) => update('contactMethod', e.target.value)}
-                className="sr-only"
-              />
-              {m}
-            </label>
-          ))}
-        </div>
-        {touched.has('contactMethod') && errors.contactMethod && <FieldError msg={errors.contactMethod} />}
-      </div>
-
       <div className="flex flex-col gap-4 border-t border-kirakart-border pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="flex items-start gap-2 text-xs leading-relaxed text-kirakart-muted">
           <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0" />
-          This form opens your email app pre-filled. For a direct reply, write to{' '}
+          This form opens your email app with a draft; it does not submit or store your details. For a direct reply, write to{' '}
           <a href={`mailto:${site.contact.email}`} className="text-kirakart-red link-underline">{site.contact.email}</a>.
         </p>
         <button
           type="submit"
-          disabled={status === 'submitting'}
           className="inline-flex items-center justify-center gap-2 bg-kirakart-ink px-8 py-3.5 font-grotesk text-sm font-medium tracking-wide text-kirakart-cream transition-all duration-300 hover:bg-kirakart-red disabled:opacity-50"
         >
-          {status === 'submitting' ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" />
-              Sending…
-            </>
-          ) : (
-            'Send Enquiry'
-          )}
+          Open Email Draft
         </button>
       </div>
     </form>

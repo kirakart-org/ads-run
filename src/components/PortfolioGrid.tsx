@@ -30,7 +30,11 @@ export default function PortfolioGrid({
   return (
     <div>
       {showFilters && (
-        <div className="no-scrollbar -mx-5 mb-10 overflow-x-auto px-5 sm:mx-0 sm:px-0">
+        <div
+          role="group"
+          aria-label="Filter portfolio by category"
+          className="no-scrollbar -mx-5 mb-10 overflow-x-auto px-5 sm:mx-0 sm:px-0"
+        >
           <div className="flex w-max gap-2 sm:flex-wrap">
             {portfolioFilters.map((f) => (
               <button
@@ -50,7 +54,9 @@ export default function PortfolioGrid({
         </div>
       )}
 
-      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+      >
         {filtered.map((project, i) => (
           <VideoCard key={project.id} project={project} onOpen={setActive} priority={i < 3} />
         ))}

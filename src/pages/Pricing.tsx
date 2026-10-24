@@ -1,27 +1,25 @@
 import { useNavigate } from 'react-router-dom';
-import { Check } from 'lucide-react';
 import Seo from '@/components/Seo';
 import { Section, SectionHeading } from '@/components/SectionHeading';
 import PricingCard from '@/components/PricingCard';
-import FAQAccordion from '@/components/FaqAccordion';
+import FAQAccordion from '@/components/FAQAccordion';
 import CtaBanner from '@/components/CtaBanner';
 import { packages, packageAddOns, pricingFootnote } from '@/data/pricing';
 import { faqs } from '@/data/faq';
 
 const comparisonRows = [
   { feature: 'Short-form videos', starter: '2', growth: '5', monthly: '8 / month' },
-  { feature: 'Concept & scripting', starter: 'Basic', growth: 'Yes', monthly: 'Yes' },
-  { feature: 'Editing & captions', starter: 'Yes', growth: 'Yes', monthly: 'Yes' },
-  { feature: 'Hook variations', starter: '—', growth: 'Selected', monthly: 'Selected' },
-  { feature: 'Monthly creative planning', starter: '—', growth: '—', monthly: 'Yes' },
-  { feature: 'Revisions', starter: '1 per video', growth: 'Agreed', monthly: 'Agreed' },
-  { feature: 'Delivery schedule', starter: 'Per project', growth: 'Per project', monthly: 'Monthly' },
+  { feature: 'AI-powered ad concepts', starter: 'Included', growth: 'Included', monthly: 'Included' },
+  { feature: 'Editing and captions', starter: 'Included', growth: 'Included', monthly: 'Included' },
+  { feature: 'Creative variations', starter: 'Scoped', growth: 'Selected', monthly: 'Selected' },
+  { feature: 'Delivery schedule', starter: 'Agreed', growth: 'Agreed', monthly: 'Monthly' },
+  { feature: 'Licensing and usage rights', starter: 'Agreed before production', growth: 'Agreed before production', monthly: 'Agreed before production' },
 ];
 
 const suitableFor = [
-  { pkg: 'Starter', text: 'Brands testing UGC video for the first time with a single product.' },
-  { pkg: 'Growth', text: 'Brands running paid social who need several creatives to test.' },
-  { pkg: 'Monthly', text: 'Growing brands refreshing paid creative every few weeks.' },
+  { pkg: 'Starter', text: 'Brands starting with two AI-powered product video ads.' },
+  { pkg: 'Growth', text: 'Brands looking for more product ad concepts and variations.' },
+  { pkg: 'Monthly', text: 'Brands that want an ongoing monthly flow of video ad creatives.' },
 ];
 
 export default function PricingPage() {
@@ -34,8 +32,8 @@ export default function PricingPage() {
       <Section className="!pt-12 md:!pt-16">
         <SectionHeading
           eyebrow="Pricing"
-          title="Pricing that scales with your creative needs."
-          description="Proposed introductory prices. Every package is scoped and quoted before production, so the final price reflects your actual requirements."
+          title="Proposed starting packages for AI video ad creation."
+          description="Indicative packages for AI UGC video ads and product advertisement videos. Final scope, licensing, production requirements and commercial usage rights are agreed before production."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {packages.map((p) => (
@@ -103,16 +101,16 @@ export default function PricingPage() {
             <SectionHeading eyebrow="Usage Rights" title="How licensing works." />
             <div className="mt-8 space-y-4 text-sm leading-relaxed text-kirakart-muted">
               <p>
-                Usage rights — platforms, duration and territory — are defined in your quotation
-                before production. There is no perpetual, unlimited licence by default.
+                Commercial usage rights — including platforms, duration and territory — are defined
+                in your quotation before paid production. There is no perpetual, unlimited licence by default.
               </p>
               <p>
-                You can use the final videos in paid advertising within the agreed usage terms.
-                Extended usage rights are available as an add-on.
+                You can use the final videos within the agreed commercial usage terms. Additional
+                licensing requirements are discussed as part of the scope.
               </p>
               <p>
-                We do not offer unlimited revisions. Each package includes an agreed number of
-                revision rounds; further rounds are quoted as add-ons.
+                Each package has a defined production scope and revision allowance. Further work is
+                agreed and quoted separately.
               </p>
             </div>
           </div>
@@ -132,8 +130,8 @@ export default function PricingPage() {
       </Section>
 
       <CtaBanner
-        title="Ready to pick a package?"
-        description="Choose a package above and we will scope it to your product before production."
+        title="Ready to choose your ad package?"
+        description="Select a proposed package and we’ll confirm its scope, licensing and commercial usage rights with you."
         primaryLabel="Start a Project"
       />
       <div className="pb-20" />

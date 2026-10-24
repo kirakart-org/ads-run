@@ -77,7 +77,7 @@ export default function Footer() {
               WhatsApp {site.contact.whatsappDisplay}
             </a>
             <p className="mt-4 text-xs leading-relaxed text-kirakart-muted">
-              Creator-style ads for growing brands. Production only — we do not manage paid media.
+              AI-powered UGC-style video ad creation for growing brands.
             </p>
           </div>
         </div>

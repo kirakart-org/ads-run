@@ -40,7 +40,7 @@ export default function CtaBanner({
             to="/work"
             className="mt-6 inline-flex items-center gap-1 font-grotesk text-sm text-kirakart-cream/60 transition-colors hover:text-kirakart-cream link-underline"
           >
-            or explore our work first
+            or see our ad samples first
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

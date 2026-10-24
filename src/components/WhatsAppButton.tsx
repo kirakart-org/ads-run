@@ -13,7 +13,7 @@ export default function WhatsAppButton({
   className = '',
 }: WhatsAppButtonProps) {
   const href = `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(
-    "Hi Kirakart Ads, I'd like to discuss a UGC video ad project.",
+    "Hi Kirakart Ads, I'd like to discuss an AI-powered UGC-style video ad for my brand.",
   )}`;
 
   if (variant === 'icon') {
