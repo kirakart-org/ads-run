@@ -13,17 +13,21 @@ export default function WorkPage() {
       <Section className="!pt-12 !pb-12 md:!pt-16 md:!pb-16">
         <SectionHeading
           eyebrow="Portfolio"
-          title="AI Ad Samples"
-          description="Explore product-specific ad concepts created with AI to show brands what's possible. Previews are illustrative; these are concept samples, not client campaigns or performance claims."
+          title="AI UGC Video Ads"
+          description="We create AI-powered UGC-style video ads that turn product features into engaging stories for social media. Explore our video work to see how your brand's products could be presented through compelling hooks, product demonstrations, and creative variations."
         />
         <div className="mt-8 flex flex-wrap items-center gap-4 text-xs text-kirakart-muted">
           <span className="inline-flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-kirakart-yellow" />
-            {conceptCount} AI-generated concepts
+            {conceptCount} AI-powered production
           </span>
           <span className="inline-flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-kirakart-border" />
-            Published only — drafts are hidden
+            Product-focused storytelling
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-kirakart-red" />
+           Social-first video ads
           </span>
         </div>
       </Section>

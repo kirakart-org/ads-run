@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { CheckCircle2, AlertCircle } from 'lucide-react';
 import { packages } from '@/data/pricing';
@@ -17,6 +17,9 @@ interface FormState {
 }
 
 type Errors = Partial<Record<keyof FormState, string>>;
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || 'https://ads-run-backend-2hrr.onrender.com';
 
 const initialState: FormState = {
   fullName: '',
@@ -52,11 +55,70 @@ function validate(s: FormState): Errors {
   if (!s.email.trim()) e.email = 'Please enter your email.';
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email)) e.email = 'Please enter a valid email address.';
   if (!s.brand.trim()) e.brand = 'Please enter your brand name.';
+  if (s.url.trim()) {
+    try {
+      const url = new URL(s.url.trim());
+      if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+        e.url = 'Please enter a valid website or Instagram URL.';
+      }
+    } catch {
+      e.url = 'Please enter a valid website or Instagram URL.';
+    }
+  }
   if (!s.category) e.category = 'Please select a product category.';
   if (!s.budget) e.budget = 'Please select a budget range.';
+  if (s.videoCount) {
+    const videoCount = Number(s.videoCount);
+    if (!Number.isInteger(videoCount) || videoCount < 1 || videoCount > 1000) {
+      e.videoCount = 'Enter a whole number between 1 and 1,000.';
+    }
+  }
   if (!s.brief.trim() || s.brief.trim().length < 20)
     e.brief = 'Please add a brief of at least 20 characters.';
   return e;
+}
+
+async function submitAdEnquiry(form: FormState): Promise<void> {
+  const payload = {
+    name: form.fullName.trim(),
+    business_email: form.email.trim(),
+    brand_name: form.brand.trim(),
+    product_url: form.url.trim() || null,
+    product_category: form.category,
+    selected_package: form.packageId || 'not_sure',
+    approximate_budget: form.budget,
+    desired_video_count: form.videoCount ? Number(form.videoCount) : null,
+    project_details: form.brief.trim(),
+  };
+
+  const response = await fetch(`${API_BASE_URL.replace(/\/+$/, '')}/ad-enquiries`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  const responseText = await response.text();
+  let result: unknown;
+
+  if (responseText) {
+    try {
+      result = JSON.parse(responseText) as unknown;
+    } catch {
+      if (response.ok) {
+        throw new Error('The server returned an invalid response. Please try again.');
+      }
+    }
+  }
+
+  if (!response.ok) {
+    const detail =
+      typeof result === 'object' &&
+      result !== null &&
+      'detail' in result &&
+      typeof result.detail === 'string'
+        ? result.detail
+        : 'Failed to submit enquiry. Please try again.';
+    throw new Error(detail);
+  }
 }
 
 export default function ContactForm() {
@@ -64,7 +126,8 @@ export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Errors>({});
   const [touched, setTouched] = useState<Set<keyof FormState>>(new Set());
-  const [status, setStatus] = useState<'idle' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
     const pkg = searchParams.get('package');
@@ -72,11 +135,6 @@ export default function ContactForm() {
       setForm((f) => ({ ...f, packageId: pkg }));
     }
   }, [searchParams]);
-
-  const packageLabel = useMemo(
-    () => packages.find((p) => p.id === form.packageId)?.name ?? '',
-    [form.packageId],
-  );
 
   const update = (key: keyof FormState, value: string) => {
     setForm((f) => ({ ...f, [key]: value }));
@@ -88,32 +146,24 @@ export default function ContactForm() {
     setErrors(validate({ ...form, [key]: form[key] }));
   };
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const allErrors = validate(form);
     setErrors(allErrors);
     setTouched(new Set(Object.keys(form) as (keyof FormState)[]));
     if (Object.keys(allErrors).length > 0) return;
 
-    const subject = encodeURIComponent(`New enquiry from ${form.brand} — ${packageLabel || 'General'}`);
-    const body = encodeURIComponent(
-      [
-        `Name: ${form.fullName}`,
-        `Business email: ${form.email}`,
-        `Brand: ${form.brand}`,
-        `Product website / Instagram: ${form.url || '—'}`,
-        `Product category: ${form.category}`,
-        `Selected package: ${packageLabel || '—'}`,
-        `Budget: ${form.budget}`,
-        `Desired number of videos: ${form.videoCount || '—'}`,
-        '',
-        'Project details:',
-        form.brief,
-      ].join('\n'),
-    );
-
-    window.location.href = `mailto:${site.contact.email}?subject=${subject}&body=${body}`;
-    setStatus('success');
+    setStatus('submitting');
+    setSubmitError('');
+    try {
+      await submitAdEnquiry(form);
+      setStatus('success');
+    } catch (error) {
+      setStatus('error');
+      setSubmitError(
+        error instanceof Error ? error.message : 'Failed to submit enquiry. Please try again.',
+      );
+    }
   };
 
   if (status === 'success') {
@@ -121,11 +171,11 @@ export default function ContactForm() {
       <div className="border border-kirakart-border bg-kirakart-cream p-8 text-center sm:p-12">
         <CheckCircle2 className="mx-auto h-12 w-12 text-kirakart-red" />
         <h3 className="mt-4 font-grotesk text-xl font-semibold text-kirakart-ink">
-          Your email draft is ready.
+          Your enquiry has been sent.
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-kirakart-muted">
-          Your email app should have opened with your enquiry pre-filled. Nothing is submitted or
-          stored on this website. If it didn&rsquo;t, write to us directly at{' '}
+          Thanks for sharing your project details. We&rsquo;ll follow up with you soon. If you
+          need to reach us directly, write to{' '}
           <a href={`mailto:${site.contact.email}`} className="text-kirakart-red link-underline">
             {site.contact.email}
           </a>
@@ -135,6 +185,7 @@ export default function ContactForm() {
           onClick={() => {
             setStatus('idle');
             setForm(initialState);
+            setSubmitError('');
           }}
           className="mt-6 font-grotesk text-sm font-medium text-kirakart-ink link-underline"
         >
@@ -214,8 +265,11 @@ export default function ContactForm() {
             placeholder="https://"
             value={form.url}
             onChange={(e) => update('url', e.target.value)}
+            onBlur={() => handleBlur('url')}
             className={fieldClass('url')}
+            aria-invalid={!!errors.url}
           />
+          {touched.has('url') && errors.url && <FieldError msg={errors.url} />}
         </div>
       </div>
 
@@ -285,11 +339,16 @@ export default function ContactForm() {
             id="videoCount"
             type="number"
             min="1"
+            max="1000"
+            step="1"
             placeholder="e.g. 5"
             value={form.videoCount}
             onChange={(e) => update('videoCount', e.target.value)}
+            onBlur={() => handleBlur('videoCount')}
             className={fieldClass('videoCount')}
+            aria-invalid={!!errors.videoCount}
           />
+          {touched.has('videoCount') && errors.videoCount && <FieldError msg={errors.videoCount} />}
         </div>
       </div>
 
@@ -310,17 +369,24 @@ export default function ContactForm() {
         {touched.has('brief') && errors.brief && <FieldError msg={errors.brief} />}
       </div>
 
+      {status === 'error' && (
+        <p role="alert" className="text-sm text-kirakart-red">
+          {submitError}
+        </p>
+      )}
+
       <div className="flex flex-col gap-4 border-t border-kirakart-border pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="flex items-start gap-2 text-xs leading-relaxed text-kirakart-muted">
           <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0" />
-          This form opens your email app with a draft; it does not submit or store your details. For a direct reply, write to{' '}
+          Your details will be sent to us so we can follow up about your project. For a direct reply, write to{' '}
           <a href={`mailto:${site.contact.email}`} className="text-kirakart-red link-underline">{site.contact.email}</a>.
         </p>
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-2 bg-kirakart-ink px-8 py-3.5 font-grotesk text-sm font-medium tracking-wide text-kirakart-cream transition-all duration-300 hover:bg-kirakart-red disabled:opacity-50"
+          disabled={status === 'submitting'}
+          className="inline-flex items-center justify-center gap-2 bg-kirakart-ink px-8 py-3.5 font-grotesk text-sm font-medium tracking-wide text-kirakart-cream transition-all duration-300 hover:bg-kirakart-red disabled:cursor-wait disabled:opacity-50"
         >
-          Open Email Draft
+          {status === 'submitting' ? 'Sending…' : 'Send Enquiry'}
         </button>
       </div>
     </form>
