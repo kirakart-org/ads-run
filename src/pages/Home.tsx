@@ -22,17 +22,17 @@ const heroImages = [
   {
     src: 'https://images.pexels.com/photos/9513108/pexels-photo-9513108.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
     alt: 'Snack pack product shot',
-    span: '',
+    span: 'col-start-2 row-start-1',
   },
   {
     src: 'https://images.pexels.com/photos/30466066/pexels-photo-30466066.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
     alt: 'Fashion handbags',
-    span: '',
+    span: 'col-start-3 row-start-1',
   },
   {
     src: 'https://images.pexels.com/photos/8101534/pexels-photo-8101534.jpeg?auto=compress&cs=tinysrgb&h=750&w=500',
     alt: 'Serum dropper texture',
-    span: 'row-span-2',
+    span: 'col-span-2 col-start-2 row-start-2',
   },
 ];
 
@@ -114,11 +114,11 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid aspect-[3/2] grid-cols-3 grid-rows-2 gap-3 sm:gap-4">
                 {heroImages.map((img, i) => (
                   <div
                     key={img.src}
-                    className={`relative overflow-hidden rounded-lg bg-kirakart-border/30 ${img.span} animate-[fade-up_0.8s_ease-out]`}
+                    className={`relative min-h-0 overflow-hidden rounded-lg bg-kirakart-border/30 ${img.span} animate-[fade-up_0.8s_ease-out]`}
                     style={{ animationDelay: `${0.1 * i + 0.3}s` }}
                   >
                     <img
